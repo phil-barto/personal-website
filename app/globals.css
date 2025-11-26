@@ -71,6 +71,11 @@ body {
   }
 }
 
-.animate-blur-to-focus {
+.photo-blurred img {
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+.animate-blur-to-focus img {
   animation: blur-to-focus 1s ease-out forwards;
 }

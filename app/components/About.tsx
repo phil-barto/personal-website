@@ -1,7 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import TypingText from "@/components/animata/text/typing-text";
 
 export default function About() {
+	const [photoAnimationStarted, setPhotoAnimationStarted] = useState(false);
+
+	// Calculate typing duration: "Hi! I'm Phil." = 12 characters * 100ms = 1200ms
+	const handleTypingComplete = () => {
+		setPhotoAnimationStarted(true);
+	};
+
 	return (
 		<section id="about" className="py-12">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -13,6 +23,7 @@ export default function About() {
 							grow={true}
 							delay={100}
 							hideCursorOnComplete={true}
+							onComplete={handleTypingComplete}
 						/>
 					</h2>
 					<p className="text-white text-lg leading-relaxed">
@@ -21,13 +32,13 @@ export default function About() {
 					</p>
 				</div>
 
-				<div className="max-w-md max-h-md aspect-square relative ml-auto flex justify-end">
+				<div className={`max-w-md max-h-md aspect-square relative ml-auto flex justify-end ${photoAnimationStarted ? 'animate-blur-to-focus' : 'photo-blurred'}`}>
 					 <Image
               src="/profile_pic.jpg"
               alt="Phil Barto"
               width={400}
               height={400}
-              className="w-full h-full object-contain object-right animate-blur-to-focus"
+              className="w-full h-full object-contain object-right"
               priority
             />
 				</div>

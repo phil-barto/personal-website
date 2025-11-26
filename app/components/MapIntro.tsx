@@ -47,7 +47,7 @@ export default function MapIntro() {
     mapRef.current = map;
 
     map.on("load", () => {
-      // Small delay to ensure marker is rendered before animation
+      // Sequence: Typing (1200ms) + Photo animation (1000ms) = 2200ms total before map starts
       setTimeout(() => {
         // Animate camera from US view → Target location (completely flat)
         map.flyTo({
@@ -59,7 +59,7 @@ export default function MapIntro() {
           bearing: 0,
           essential: true,
         });
-      }, 100);
+      }, 2200);
     });
   }, []);
 
