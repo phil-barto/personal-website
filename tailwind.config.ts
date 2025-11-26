@@ -18,14 +18,16 @@ const config: Config = {
         mono: ["var(--font-geist-mono)", "monospace"],
         "fira-code": ["var(--font-fira-code)", "monospace"],
       },
-			transitionTimingFunction: {
+      transitionTimingFunction: {
         slow: "cubic-bezier(.405, 0, .025, 1)",
-        "minor-spring": "cubic-bezier(0.18,0.89,0.82,1.04)",
-     }
+      },
+      transitionDuration: {
+        mid: "3s",
+      },
+
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
 
 export default config;
-

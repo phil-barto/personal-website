@@ -59,3 +59,18 @@ body {
     transform: scale(1);
   }
 }
+
+@keyframes blur-to-focus {
+  0% {
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.animate-blur-to-focus {
+  animation: blur-to-focus 1s ease-out forwards;
+}
