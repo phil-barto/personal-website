@@ -27,8 +27,16 @@ export default function About() {
 						/>
 					</h2>
 					<p className="text-white text-lg leading-relaxed">
-						Hi I'm phil. Software developer based in NYC. I've been all over the
-						stack but recently have been designing platforms for fintechs
+						I'm a software developer based in NYC. I've been all over the stack but recently I've been doing a-lot of backend and data engineering work.
+					</p>
+					<br />
+					<p className="text-white text-lg leading-relaxed">
+						I currently work at Chime (the banking app not the doorbell), 
+						where I support paid marketing engineering. TLDR: I build and support custom platforms for marketers to be more efficient at their jobs. 
+					</p>
+					<br />
+					<p className="text-white text-lg leading-relaxed">
+						Previously, I worked at Capital One, where I supported a transaction processing and contract supplier platform.
 					</p>
 				</div>
 
