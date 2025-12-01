@@ -10,6 +10,7 @@
       background-position: 350% 50%, 350% 50%;
     }
   }
+  --animate-spin: spin 2s linear infinite
 }
 
 @plugin "tailwindcss-animate";

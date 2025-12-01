@@ -16,7 +16,7 @@ export default function About() {
 		<section id="about" className="py-12">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 				<div>
-					<h2 className="text-5xl md:text-5xl font-bold text-red-500 mb-6 font-fira-code">
+					<h2 className="text-5xl md:text-5xl font-bold mb-6 font-fira-code text-[#FFA500]">
 						<TypingText
 							text="Hi! I'm Phil."
 							repeat={false}
