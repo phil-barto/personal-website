@@ -27,7 +27,7 @@ export default function About() {
 						/>
 					</h2>
 					<p className="text-white text-lg leading-relaxed">
-						I'm a software developer based in NYC. I've been all over the stack but recently I've been doing a-lot of backend and data engineering work.
+						I'm a software developer based in NYC. Been all over the stack but recently I've been doing a-lot of backend and data engineering work.
 					</p>
 					<br />
 					<p className="text-white text-lg leading-relaxed">

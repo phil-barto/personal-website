@@ -64,6 +64,13 @@ export default function MapIntro() {
   }, []);
 
   return (
-    <div ref={mapContainerRef} className="w-full h-full" />
+    <div className="relative w-full h-full">
+      <div ref={mapContainerRef} className="w-full h-full" />
+      {/* Gradient overlays on edges */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      </div>
+    </div>
   );
 }
