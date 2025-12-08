@@ -68,10 +68,10 @@ export default function Consulting() {
         </div>
 
         <p className="text-white text-lg leading-relaxed">
-          I specialize in frontend tools and frameworks, with a strong focus on
-          improving DX and infrastructure. And I love helping and connecting
-          with people around the world. If you&apos;re interested in working
-          together, feel free to reach out!
+          I specialize in backend and data engineering, with a strong focus on
+          building scalable, efficient, and maintainable systems. I love helping
+          and connecting with people around the world. If you&apos;re interested
+          in working together, feel free to reach out!
         </p>
       </div>
     </section>
