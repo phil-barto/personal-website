@@ -117,7 +117,14 @@ function NormalEffect({
   index: number;
   alwaysVisibleCount: number;
 }) {
-  return <>{text.slice(0, Math.max(index, Math.min(text.length, alwaysVisibleCount ?? 1)))}</>;
+  return (
+    <>
+      {text.slice(
+        0,
+        Math.max(index, Math.min(text.length, alwaysVisibleCount ?? 1))
+      )}
+    </>
+  );
 }
 
 enum TypingDirection {
@@ -163,7 +170,9 @@ function Type({
   hideCursorOnComplete,
 }: TypingTextProps) {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState<TypingDirection>(TypingDirection.Forward);
+  const [direction, setDirection] = useState<TypingDirection>(
+    TypingDirection.Forward
+  );
   const [isComplete, setIsComplete] = useState(false);
 
   const words = useMemo(() => text.split(/\s+/), [text]);
@@ -175,9 +184,15 @@ function Type({
 
     const startTyping = () => {
       setIndex((prevDir) => {
-        if (direction === TypingDirection.Backward && prevDir === TypingDirection.Forward) {
+        if (
+          direction === TypingDirection.Backward &&
+          prevDir === TypingDirection.Forward
+        ) {
           clearInterval(interval);
-        } else if (direction === TypingDirection.Forward && prevDir === total - 1) {
+        } else if (
+          direction === TypingDirection.Forward &&
+          prevDir === total - 1
+        ) {
           clearInterval(interval);
         }
         return prevDir + direction;
@@ -207,6 +222,7 @@ function Type({
 
   useEffect(() => {
     if (index === total && !repeat) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsComplete(true);
       onComplete?.();
     }
@@ -215,7 +231,7 @@ function Type({
   const waitingNextCycle = index === total || index === 0;
 
   return (
-    <div className={cn("relative font-mono", className)}>
+    <div className={cn("relative font-fira-code", className)}>
       {!grow && <div className="invisible">{text}</div>}
       <div
         className={cn({
@@ -223,13 +239,23 @@ function Type({
         })}
       >
         {smooth ? (
-          <SmoothEffect words={words} index={index} alwaysVisibleCount={alwaysVisibleCount ?? 1} />
+          <SmoothEffect
+            words={words}
+            index={index}
+            alwaysVisibleCount={alwaysVisibleCount ?? 1}
+          />
         ) : (
-          <NormalEffect text={text} index={index} alwaysVisibleCount={alwaysVisibleCount ?? 1} />
+          <NormalEffect
+            text={text}
+            index={index}
+            alwaysVisibleCount={alwaysVisibleCount ?? 1}
+          />
         )}
         <CursorWrapper
           waiting={waitingNextCycle}
-          visible={Boolean(!smooth && cursor && (!hideCursorOnComplete || !isComplete))}
+          visible={Boolean(
+            !smooth && cursor && (!hideCursorOnComplete || !isComplete)
+          )}
         >
           {cursor}
         </CursorWrapper>

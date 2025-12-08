@@ -1,23 +1,25 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! I'll get back to you soon.");
+    setFormData({ name: "", email: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -25,13 +27,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6">
+    <section
+      id="contact"
+      className="min-h-screen flex items-center justify-center py-20 px-6"
+    >
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-black dark:text-white">Contact Me</h2>
+        <h2 className="text-4xl font-bold mb-12 text-black dark:text-white font-fira-code">
+          Contact Me
+        </h2>
         <div className="bg-white dark:bg-black border border-zinc-200 dark:border-zinc-800 rounded-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Name
               </label>
               <input
@@ -45,7 +55,10 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Email
               </label>
               <input
@@ -59,7 +72,10 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -80,7 +96,9 @@ export default function Contact() {
             </button>
           </form>
           <div className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800">
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">Or reach out directly:</p>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+              Or reach out directly:
+            </p>
             <div className="space-y-2 text-zinc-700 dark:text-zinc-300">
               <p>Email: your.email@example.com</p>
               <p>LinkedIn: linkedin.com/in/yourprofile</p>
@@ -92,4 +110,3 @@ export default function Contact() {
     </section>
   );
 }
-
