@@ -53,7 +53,7 @@ export default function MapIntro() {
         map.flyTo({
           center: [TARGET.lng, TARGET.lat],
           zoom: TARGET.zoom,
-          speed: .9,
+          speed: 1.1,
           curve: 1.0,
           pitch: 0,
           bearing: 0,

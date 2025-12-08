@@ -32,11 +32,11 @@ export default function About() {
 					<br />
 					<p className="text-white text-lg leading-relaxed">
 						I currently work at Chime (the banking app not the doorbell), 
-						where I support paid marketing engineering. TLDR: I build and support custom platforms for marketers to be more efficient at their jobs. 
+						where I support paid marketing engineering. I previously worked at Capital One, where I supported a credit card processing platform and managed enterprise supplier data.
 					</p>
 					<br />
 					<p className="text-white text-lg leading-relaxed">
-						Previously, I worked at Capital One, where I supported a transaction processing and contract supplier platform.
+						Outside of work, I thoroughly enjoy endurance sports, lifting, skiing, and all things fitness. Also a MASSIVE sci-fi nerd, if you're a star wars or marvel fan... let's talk.
 					</p>
 				</div>
 
