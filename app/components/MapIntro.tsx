@@ -6,7 +6,7 @@ import maplibregl from "maplibre-gl";
 // Target location — NYC
 const TARGET = {
   lat: 40.7128,
-	lng: -74.0060,
+  lng: -74.006,
   zoom: 12,
 };
 
@@ -23,12 +23,11 @@ export default function MapIntro() {
   const markerRef = useRef<maplibregl.Marker | null>(null);
 
   useEffect(() => {
-    if (!mapContainerRef.current) return;
+    if (!mapContainerRef.current || mapRef.current) return;
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style:
-        "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+      style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
       center: [US_CENTER.lng, US_CENTER.lat], // Start with US view
       zoom: US_CENTER.zoom,
       pitch: 0,
@@ -46,9 +45,11 @@ export default function MapIntro() {
 
     mapRef.current = map;
 
+    let flyToTimeout: NodeJS.Timeout;
+
     map.on("load", () => {
       // Sequence: Typing (1200ms) + Photo animation (1000ms) = 2200ms total before map starts
-      setTimeout(() => {
+      flyToTimeout = setTimeout(() => {
         // Animate camera from US view → Target location (completely flat)
         map.flyTo({
           center: [TARGET.lng, TARGET.lat],
@@ -61,6 +62,21 @@ export default function MapIntro() {
         });
       }, 2200);
     });
+
+    // Cleanup function
+    return () => {
+      if (flyToTimeout) {
+        clearTimeout(flyToTimeout);
+      }
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+      if (markerRef.current) {
+        markerRef.current.remove();
+        markerRef.current = null;
+      }
+    };
   }, []);
 
   return (

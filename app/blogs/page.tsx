@@ -1,11 +1,8 @@
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
-import About from "./components/About";
-import ContactMe from "./components/ContactMe";
-import Consulting from "./components/Consulting";
+import Navigation from "../components/Navigation";
+import Blogs from "../components/Blogs";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 
-export default function Home() {
+export default function BlogsPage() {
   return (
     <>
       <Navigation />
@@ -13,10 +10,7 @@ export default function Home() {
         <div className="w-full px-6">
           <div className="w-4/7 md:w-4/7 mx-auto">
             <BackgroundBeams className="absolute inset-0" />
-            <Header />
-            <About />
-            <Consulting />
-            <ContactMe />
+            <Blogs />
           </div>
         </div>
       </main>
