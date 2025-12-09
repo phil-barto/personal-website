@@ -19,7 +19,7 @@ const experiences: ExperienceItem[] = [
     location: "New York, NY",
     startDate: "2023",
     endDate: "Present",
-    logo: "/chime-logo.png",
+    logo: "/chime.png",
     description: [
       "Support paid marketing engineering initiatives, building scalable backend systems and data pipelines",
       "Develop and maintain data engineering solutions to optimize marketing performance and attribution",
@@ -32,7 +32,7 @@ const experiences: ExperienceItem[] = [
     location: "McLean, VA",
     startDate: "2021",
     endDate: "2023",
-    logo: "/capital-one-logo.png",
+    logo: "/c1.png",
     description: [
       "Supported credit card processing platform, ensuring high availability and reliability for millions of transactions",
       "Managed enterprise supplier data systems, improving data quality and operational efficiency",
