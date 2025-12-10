@@ -43,7 +43,7 @@ const chapters: Chapter[] = [
   {
     chapter: "Chapter 2",
     title: "Scaling to Billions",
-    role: "Software Engineer → Senior Software Engineer",
+    role: "Associate Software Engineer → Senior Software Engineer",
     company: "Capital One",
     period: "2020 — 2024",
     logoUrl: "/c1.png",
