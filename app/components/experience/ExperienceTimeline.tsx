@@ -6,7 +6,7 @@ import type { Chapter } from "./ExperienceChapter";
 const chapters: Chapter[] = [
   {
     chapter: "Chapter 3",
-    title: "Growth Engineering",
+    title: "Growth Engineering - Chime",
     role: "Software Engineer, Growth",
     company: "Chime",
     period: "2024 — Present",
@@ -42,7 +42,7 @@ const chapters: Chapter[] = [
   },
   {
     chapter: "Chapter 2",
-    title: "Scaling to Billions",
+    title: "Supporting business critical systems - Capital One",
     role: "Associate Software Engineer → Senior Software Engineer",
     company: "Capital One",
     period: "2020 — 2024",
