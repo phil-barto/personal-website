@@ -47,7 +47,7 @@ const chapters: Chapter[] = [
     company: "Capital One",
     period: "2020 — 2024",
     logoUrl: "/c1.png",
-    intro: `Four years. Three promotions. One massive platform processing billions in credit card transactions yearly. I learned that legacy systems aren't just technical challenges—they're organizational ones. Here, I discovered how to build systems that are only as resilient as the people who build them.`,
+    intro: `Rose through the ranks to Senior Software Engineer, most recently at their in-house settlements & clearing platform, processing 15b in transactions daily. Before this team, I was on an enterprise contract data platform, which managed 10k suppliers data. Through these two teams, I learned system design, working cross-functionally, and driving outcomes in complex, regulated environments.`,
     highlights: [
       {
         metric: "$15B",
@@ -66,7 +66,7 @@ const chapters: Chapter[] = [
       },
       {
         description:
-          "Led team of 10 engineers for AWS migration, selected from 35 engineers as main POC",
+          "Led team of 10 engineers for AWS migration, selected from 35 engineers as main POC to 3+ external orgs such as partnerships, trade credit, and auths",
       },
       {
         description:
