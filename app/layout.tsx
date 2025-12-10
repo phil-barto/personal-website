@@ -19,8 +19,9 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Website",
-  description: "Personal website showcasing professional history, blogs, and contact information",
+  title: "Phil's Website",
+  description:
+    "Personal website showcasing professional history, blogs, and contact information",
 };
 
 export default function RootLayout({
