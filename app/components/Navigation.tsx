@@ -75,14 +75,14 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed top-4 left-4 md:top-6 md:left-6 z-50"
+      className="fixed top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 z-50"
       aria-label="Main navigation"
     >
       <motion.ul
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="flex flex-col gap-1"
+        className="flex flex-col gap-0.5 sm:gap-1"
       >
         {menuItems.map((item, index) => {
           const Icon = item.icon;
@@ -106,8 +106,8 @@ export default function Navigation() {
                     }
                   }}
                   className={cn(
-                    "group flex items-center gap-2 px-2 py-1.5",
-                    "text-white text-lg font-fira-code",
+                    "group flex items-center gap-1.5 sm:gap-2 px-1.5 sm:px-2 py-1 sm:py-1.5",
+                    "text-white text-sm sm:text-base md:text-lg font-fira-code",
                     "transition-colors duration-200",
                     "hover:text-[#FFA500]",
                     itemActive && "text-[#FFA500]"
@@ -119,8 +119,8 @@ export default function Navigation() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "group flex items-center gap-2 px-2 py-1.5",
-                    "text-white text-lg font-fira-code",
+                    "group flex items-center gap-1.5 sm:gap-2 px-1.5 sm:px-2 py-1 sm:py-1.5",
+                    "text-white text-sm sm:text-base md:text-lg font-fira-code",
                     "transition-colors duration-200",
                     "hover:text-[#FFA500]",
                     itemActive && "text-[#FFA500]"

@@ -33,31 +33,31 @@ export default function Consulting() {
   const duplicatedTech = [...technologies, ...technologies];
 
   return (
-    <section id="consulting" className="py-12">
+    <section id="consulting" className="py-8 sm:py-12">
       <div className="w-full">
-        <h2 className="text-5xl md:text-5xl font-bold text-white mb-6 font-fira-code">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-fira-code">
           Consulting
         </h2>
 
-        <p className="text-white text-lg leading-relaxed mb-8">
+        <p className="text-white text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
           If you&apos;re stuck on a tough engineering problem, need someone to
           audit a slow build, or are seeking broader guidance, I&apos;m
           available to help.
         </p>
 
         {/* Moving belt of icons */}
-        <div className="relative w-full overflow-hidden mb-8 py-4">
+        <div className="relative w-full overflow-hidden mb-6 sm:mb-8 py-3 sm:py-4">
           <div className="flex animate-scroll">
             {duplicatedTech.map((tech, index) => {
               const Icon = tech.icon;
               return (
                 <div
                   key={`${tech.name}-${index}`}
-                  className="flex-shrink-0 mx-6 flex items-center justify-center"
-                  style={{ minWidth: "80px" }}
+                  className="flex-shrink-0 mx-3 sm:mx-6 flex items-center justify-center"
+                  style={{ minWidth: "60px" }}
                 >
                   <Icon
-                    className="w-16 h-16"
+                    className="w-12 h-12 sm:w-16 sm:h-16"
                     style={{ color: tech.color }}
                     title={tech.name}
                   />
@@ -67,7 +67,7 @@ export default function Consulting() {
           </div>
         </div>
 
-        <p className="text-white text-lg leading-relaxed">
+        <p className="text-white text-base sm:text-lg leading-relaxed">
           I specialize in backend and data engineering, with a strong focus on
           building scalable, efficient, and maintainable systems. I love helping
           and connecting with people around the world. If you&apos;re interested

@@ -62,16 +62,16 @@ export const ExperienceChapter = ({
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Header */}
-      <header className="mb-6">
-        <div className="flex items-start gap-4 md:gap-5">
-          <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden border-2 border-white/20 bg-white/10 flex items-center justify-center flex-shrink-0">
+      <header className="mb-4 sm:mb-6">
+        <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl overflow-hidden border-2 border-white/20 bg-white/10 flex items-center justify-center flex-shrink-0">
             {chapter.logoUrl.startsWith("/") ? (
               <Image
                 src={chapter.logoUrl}
                 alt={`${chapter.company} logo`}
                 width={36}
                 height={36}
-                className="w-8 h-8 md:w-9 md:h-9 object-contain"
+                className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
               />
             ) : (
               <Image
@@ -79,7 +79,7 @@ export const ExperienceChapter = ({
                 alt={`${chapter.company} logo`}
                 width={36}
                 height={36}
-                className="w-8 h-8 md:w-9 md:h-9 object-contain"
+                className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
                 unoptimized
               />
             )}
@@ -89,13 +89,13 @@ export const ExperienceChapter = ({
           </div>
 
           <div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight font-fira-code leading-tight text-white">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight font-fira-code leading-tight text-white">
               {chapter.title}
             </h2>
-            <p className="text-sm md:text-base text-white/80 font-medium mt-1">
+            <p className="text-xs sm:text-sm md:text-base text-white/80 font-medium mt-0.5 sm:mt-1">
               {chapter.role}
             </p>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-white/70 text-sm">
+            <div className="flex flex-wrap items-center gap-x-2 sm:gap-x-3 gap-y-1 mt-0.5 sm:mt-1 text-white/70 text-xs sm:text-sm">
               <span className="text-[#FFA500] font-semibold">
                 {chapter.company}
               </span>
@@ -109,7 +109,7 @@ export const ExperienceChapter = ({
       {/* Intro narrative */}
       <p
         className={cn(
-          "text-white leading-relaxed text-base md:text-lg mb-6",
+          "text-white leading-relaxed text-sm sm:text-base md:text-lg mb-4 sm:mb-6",
           "transition-all duration-500",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}
@@ -121,22 +121,24 @@ export const ExperienceChapter = ({
       {/* Highlights */}
       <div
         className={cn(
-          "space-y-2 mb-4",
+          "space-y-2 sm:space-y-2.5 mb-4",
           "transition-all duration-500",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}
         style={{ transitionDelay: `${index * 100 + 250}ms` }}
       >
         {chapter.highlights.map((highlight, hIndex) => (
-          <div key={hIndex} className="flex items-start gap-3 group">
+          <div key={hIndex} className="flex items-start gap-2 sm:gap-3 group">
             {highlight.metric ? (
-              <span className="inline-flex items-center justify-center min-w-[4.5rem] px-2 py-1 bg-[#FFA500]/10 text-[#FFA500] rounded font-mono text-sm font-semibold whitespace-nowrap">
+              <span className="inline-flex items-center justify-center min-w-[3.5rem] sm:min-w-[4.5rem] px-1.5 sm:px-2 py-0.5 sm:py-1 bg-[#FFA500]/10 text-[#FFA500] rounded font-mono text-xs sm:text-sm font-semibold whitespace-nowrap flex-shrink-0">
                 {highlight.metric}
               </span>
             ) : (
-              <span className="text-[#FFA500] mt-1.5 flex-shrink-0">→</span>
+              <span className="text-[#FFA500] mt-1 sm:mt-1.5 flex-shrink-0">
+                →
+              </span>
             )}
-            <span className="text-white text-sm md:text-base leading-relaxed">
+            <span className="text-white text-xs sm:text-sm md:text-base leading-relaxed">
               {highlight.description}
             </span>
           </div>
@@ -146,7 +148,7 @@ export const ExperienceChapter = ({
       {/* Skills tags */}
       <div
         className={cn(
-          "flex flex-wrap gap-2 pt-6 border-t border-white/20",
+          "flex flex-wrap gap-1.5 sm:gap-2 pt-4 sm:pt-6 border-t border-white/20",
           "transition-all duration-500",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}
@@ -155,7 +157,7 @@ export const ExperienceChapter = ({
         {chapter.skills.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1 bg-white/10 text-white/80 rounded-full text-xs font-mono"
+            className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 text-white/80 rounded-full text-xs font-mono"
           >
             {skill}
           </span>
@@ -164,8 +166,8 @@ export const ExperienceChapter = ({
 
       {/* Connector line to next chapter */}
       {!isLast && (
-        <div className="flex justify-center mt-12 md:mt-16">
-          <div className="h-12 md:h-16 w-px bg-gradient-to-b from-white/20 to-transparent" />
+        <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
+          <div className="h-8 sm:h-12 md:h-16 w-px bg-gradient-to-b from-white/20 to-transparent" />
         </div>
       )}
     </article>

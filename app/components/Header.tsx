@@ -1,13 +1,13 @@
 "use client";
 
-import MapIntro from './MapIntro';
+import MapIntro from "./MapIntro";
 
 export default function Header() {
   return (
     <>
-      <header className="w-full py-6">
+      <header className="w-full py-4 sm:py-6">
         <div className="w-full flex justify-center items-center">
-          <div className="h-16 md:h-45 relative w-full">
+          <div className="h-32 sm:h-48 md:h-64 lg:h-80 relative w-full">
             <MapIntro />
           </div>
         </div>
@@ -17,4 +17,3 @@ export default function Header() {
     </>
   );
 }
-

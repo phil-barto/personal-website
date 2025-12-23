@@ -86,7 +86,7 @@ const chapters: Chapter[] = [
 
 export const ExperienceTimeline = () => {
   return (
-    <div className="space-y-20 md:space-y-28">
+    <div className="space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-28">
       {chapters.map((chapter, index) => (
         <ExperienceChapter
           chapter={chapter}
