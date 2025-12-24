@@ -5,6 +5,7 @@ import ContactMe from "./components/ContactMe";
 import Consulting from "./components/Consulting";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
             <Consulting />
             <ContactMe />
             <Analytics />
+            <SpeedInsights />
           </div>
         </div>
       </main>
