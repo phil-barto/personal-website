@@ -33,9 +33,10 @@ export default function About() {
           <br />
           <p className="text-white text-base sm:text-lg leading-relaxed">
             I currently work at Chime (the banking app not the doorbell), where
-            I support paid marketing engineering. I previously worked at Capital
-            One, where I supported a credit card processing platform and managed
-            enterprise supplier data.
+            I'm a senior backend engineer on the Instant Loans team. Before that
+            I led engineering for Chime's paid marketing org. I previously
+            worked at Capital One, where I supported a credit card processing
+            platform and managed enterprise supplier data.
           </p>
           <br />
           <p className="text-white text-base sm:text-lg leading-relaxed">

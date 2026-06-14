@@ -6,35 +6,42 @@ import type { Chapter } from "./ExperienceChapter";
 const chapters: Chapter[] = [
   {
     chapter: "Chapter 3",
-    title: "Growth Engineering - Chime",
-    role: "Software Engineer, Growth",
+    title: "Instant Loans & Growth - Chime",
+    role: "Senior Software Engineer",
     company: "Chime",
     period: "2024 — Present",
     logoUrl: "/chime.png",
-    intro: `Joined into a lean backend and data engineering team that supports all paid marketing initiatives. With $350M+ annual ad spend, our team is responsible for enabling growth through ad placement, efficient CAC, and accurate attribution.`,
+    intro: `Senior backend engineer on Chime's Instant Loans product — owning loan origination, payments, reconciliation, and reporting. Previously led the lean backend and data engineering team behind all paid marketing initiatives, where $360M+ in annual ad spend drove growth through efficient ad placement, CAC, and accurate attribution.`,
     highlights: [
+      {
+        metric: "+8%",
+        description:
+          "Raised loan origination rates across the portfolio by proposing and shipping a move of the KYC verification check downstream in the origination flow.",
+      },
+      {
+        metric: "2h → 25m",
+        description:
+          "Rewrote a critical bank reporting job from a 2-hour in-memory process into a 25-minute parallelized, fault-tolerant batch file process using Sidekiq batches and S3 server-side stitching.",
+      },
       {
         metric: "$360M+",
         description:
-          "Enabling efficient ad placement and attribution, all with the goal of maximizing growth and minimizing cost.",
+          "Led the paid marketing engineering team, enabling efficient ad placement and attribution to maximize growth while minimizing cost.",
       },
       {
         metric: "2 weeks early",
         description:
-          "Delivered affiliate vendor migration ahead of schedule, reducing affiliate CAC by 27% and time to market for new affiliates by ~3.5 weeks.",
+          "Delivered affiliate vendor migration ahead of schedule, reducing affiliate CAC and time to market for new affiliates.",
       },
       {
         description:
-          "Designed deferred deep-linking framework from scratch, enabling new mobile growth capabilities across multiple channels (Meta, Google, Tiktok)",
-      },
-      {
-        description:
-          "Building reliable, scalable, and maintainable data pipelines across multiple timeframes (daily, near real time, and real-time)",
+          "Designed a deferred deep-linking framework from scratch, enabling new mobile growth capabilities across multiple channels (Meta, Google, TikTok).",
       },
     ],
     skills: [
+      "Ruby",
+      "Sidekiq",
       "SparkSQL",
-      "ReactNative",
       "Data Engineering & Ingestion",
       "Technical Leadership",
       "Airflow",
