@@ -47,7 +47,17 @@ export default function MapIntro() {
 
     let flyToTimeout: NodeJS.Timeout;
 
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     map.on("load", () => {
+      // Respect users who prefer reduced motion — skip the fly-to animation
+      if (prefersReducedMotion) {
+        map.jumpTo({ center: [TARGET.lng, TARGET.lat], zoom: TARGET.zoom });
+        return;
+      }
+
       // Sequence: Typing (1200ms) + Photo animation (1000ms) = 2200ms total before map starts
       flyToTimeout = setTimeout(() => {
         // Animate camera from US view → Target location (completely flat)

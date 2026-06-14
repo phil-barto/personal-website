@@ -18,10 +18,36 @@ const firaCode = Fira_Code({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://phildbarto.com";
+const title = "Phil Barto — Software & Data Engineer";
+const description =
+  "Phil Barto is a software and data engineer in NYC. Senior backend engineer on Chime's Instant Loans team, with a focus on scalable backend and data systems.";
+
 export const metadata: Metadata = {
-  title: "Phil's Website",
-  description:
-    "Personal website showcasing professional history, blogs, and contact information",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "Phil Barto",
+    title,
+    description,
+    images: [
+      {
+        url: "/profile_pic.jpg",
+        width: 400,
+        height: 400,
+        alt: "Phil Barto",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/profile_pic.jpg"],
+  },
 };
 
 export const viewport: Viewport = {

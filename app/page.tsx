@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import About from "./components/About";
 import ContactMe from "./components/ContactMe";
 import Consulting from "./components/Consulting";
+import Footer from "./components/Footer";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -19,6 +20,7 @@ export default function Home() {
             <About />
             <Consulting />
             <ContactMe />
+            <Footer />
             <Analytics />
             <SpeedInsights />
           </div>

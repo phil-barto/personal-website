@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import { ExperienceTimeline } from "../components/experience/ExperienceTimeline";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 
@@ -16,6 +17,7 @@ export default function ExperiencePage() {
               </h2>
               <ExperienceTimeline />
             </section>
+            <Footer />
           </div>
         </div>
       </main>

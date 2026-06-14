@@ -1,5 +1,6 @@
 import Navigation from "../components/Navigation";
 import Blogs from "../components/Blogs";
+import Footer from "../components/Footer";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 
 export default function BlogsPage() {
@@ -11,6 +12,7 @@ export default function BlogsPage() {
           <div className="w-full max-w-4xl mx-auto">
             <BackgroundBeams className="absolute inset-0" />
             <Blogs />
+            <Footer />
           </div>
         </div>
       </main>

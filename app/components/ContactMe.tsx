@@ -4,16 +4,22 @@ import { BiLogoGmail } from "react-icons/bi";
 export default function ContactMe() {
   return (
     <section id="contact" className="py-8 sm:py-12">
-      <div className="w-full">
-        {/* <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 font-fira-code">
-					Contact Me
-				</h2> */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-center">
+      <div className="w-full flex flex-col items-center text-center gap-5 sm:gap-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-fira-code">
+          Get in touch
+        </h2>
+        <p className="text-white/80 text-base sm:text-lg max-w-md">
+          Have a project, a tough problem, or just want to talk shop? My inbox
+          is open.
+        </p>
+
+        <div className="flex gap-6 sm:gap-8 justify-center items-center pt-2">
           <a
             href="https://github.com/phil-barto"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white text-lg hover:text-red-500 transition-colors"
+            aria-label="GitHub"
+            className="text-white hover:text-[#FFA500] transition-colors"
           >
             <FaGithub className="w-7 h-7 sm:w-8 sm:h-8" />
           </a>
@@ -21,14 +27,15 @@ export default function ContactMe() {
             href="https://linkedin.com/in/philbarto"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-red-500 transition-colors"
             aria-label="LinkedIn"
+            className="text-white hover:text-[#FFA500] transition-colors"
           >
             <FaLinkedin className="w-7 h-7 sm:w-8 sm:h-8" />
           </a>
           <a
             href="mailto:phildbarto@gmail.com"
-            className="text-white text-lg hover:text-red-500 transition-colors"
+            aria-label="Email"
+            className="text-white hover:text-[#FFA500] transition-colors"
           >
             <BiLogoGmail className="w-7 h-7 sm:w-8 sm:h-8" />
           </a>
