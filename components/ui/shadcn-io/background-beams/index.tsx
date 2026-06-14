@@ -1,15 +1,23 @@
-'use client';
+"use client";
 
-import React from "react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export interface BackgroundBeamsProps {
   className?: string;
 }
 
+// Deterministic per-beam pseudo-random in [0, 1) so beam timings stay varied
+// without calling an impure function during render (and without SSR mismatch).
+function beamRandom(index: number, salt: number) {
+  const value = Math.sin(index * 12.9898 + salt * 78.233) * 43758.5453;
+  return value - Math.floor(value);
+}
+
 export const BackgroundBeams = React.memo(
   ({ className }: BackgroundBeamsProps) => {
+    const shouldReduceMotion = useReducedMotion();
     const paths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
       "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -61,13 +69,13 @@ export const BackgroundBeams = React.memo(
       "M-51 -565C-51 -565 17 -160 481 -33C945 94 1013 499 1013 499",
       "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
       "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
-    ]
-    
+    ];
+
     return (
       <div
         className={cn(
           "absolute h-full w-full inset-0 [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
-          className,
+          className
         )}
       >
         <svg
@@ -94,7 +102,7 @@ export const BackgroundBeams = React.memo(
               strokeWidth="0.5"
             />
           ))}
-          
+
           <defs>
             {paths.map((path, index) => (
               <motion.linearGradient
@@ -104,20 +112,28 @@ export const BackgroundBeams = React.memo(
                   x1: "0%",
                   x2: "0%",
                   y1: "0%",
-                  y2: "0%",
+                  y2: shouldReduceMotion ? "100%" : "0%",
                 }}
-                animate={{
-                  x1: ["0%", "100%"],
-                  x2: ["0%", "95%"],
-                  y1: ["0%", "100%"],
-                  y2: ["0%", `${93 + Math.random() * 8}%`],
-                }}
-                transition={{
-                  duration: Math.random() * 10 + 10,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  delay: Math.random() * 10,
-                }}
+                animate={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        x1: ["0%", "100%"],
+                        x2: ["0%", "95%"],
+                        y1: ["0%", "100%"],
+                        y2: ["0%", `${93 + beamRandom(index, 1) * 8}%`],
+                      }
+                }
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        duration: beamRandom(index, 2) * 10 + 10,
+                        ease: "easeInOut",
+                        repeat: Infinity,
+                        delay: beamRandom(index, 3) * 10,
+                      }
+                }
               >
                 <stop stopColor="#18CCFC" stopOpacity="0" />
                 <stop stopColor="#18CCFC" />
@@ -141,8 +157,8 @@ export const BackgroundBeams = React.memo(
           </defs>
         </svg>
       </div>
-    )
-  },
-)
+    );
+  }
+);
 
-BackgroundBeams.displayName = "BackgroundBeams"
+BackgroundBeams.displayName = "BackgroundBeams";
