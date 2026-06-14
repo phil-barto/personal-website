@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -121,27 +121,27 @@ export const ExperienceChapter = ({
       {/* Highlights */}
       <div
         className={cn(
-          "space-y-2 sm:space-y-2.5 mb-4",
+          "grid grid-cols-[auto_1fr] gap-x-2 sm:gap-x-3 gap-y-2 sm:gap-y-2.5 mb-4",
           "transition-all duration-500",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}
         style={{ transitionDelay: `${index * 100 + 250}ms` }}
       >
         {chapter.highlights.map((highlight, hIndex) => (
-          <div key={hIndex} className="flex items-start gap-2 sm:gap-3 group">
+          <Fragment key={hIndex}>
             {highlight.metric ? (
-              <span className="inline-flex items-center justify-center min-w-[3.5rem] sm:min-w-[4.5rem] px-1.5 sm:px-2 py-0.5 sm:py-1 bg-[#FFA500]/10 text-[#FFA500] rounded font-mono text-xs sm:text-sm font-semibold whitespace-nowrap flex-shrink-0">
+              <span className="self-start inline-flex items-center justify-center px-1.5 sm:px-2 py-0.5 sm:py-1 bg-[#FFA500]/10 text-[#FFA500] rounded font-mono text-xs sm:text-sm font-semibold whitespace-nowrap">
                 {highlight.metric}
               </span>
             ) : (
-              <span className="text-[#FFA500] mt-1 sm:mt-1.5 flex-shrink-0">
+              <span className="self-start justify-self-center text-[#FFA500] mt-1 sm:mt-1.5">
                 →
               </span>
             )}
-            <span className="text-white text-xs sm:text-sm md:text-base leading-relaxed">
+            <span className="self-start text-white text-xs sm:text-sm md:text-base leading-relaxed">
               {highlight.description}
             </span>
-          </div>
+          </Fragment>
         ))}
       </div>
 
