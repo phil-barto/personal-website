@@ -51,7 +51,7 @@ export const chapters: Chapter[] = [
     company: "Capital One",
     period: "2020 — 2024",
     logoUrl: "/c1.png",
-    intro: `Rose through the ranks to Senior Software Engineer, most recently at their in-house settlements & clearing platform, processing 15b in transactions daily. Before this team, I was on an enterprise contract data platform, which managed 10k suppliers data. Through these two teams, I learned system design, working cross-functionally, and driving outcomes in complex, regulated environments.`,
+    intro: `Rose through the ranks to Senior Software Engineer, most recently at their in-house settlements & clearing platform, processing 15b in transactions yearly. Before this team, I was on an enterprise contract data platform, which managed 10k suppliers data. Through these two teams, I learned system design, working cross-functionally, and driving outcomes in complex, regulated environments.`,
     highlights: [
       {
         metric: "$15B",
